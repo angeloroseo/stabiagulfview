@@ -10,7 +10,7 @@ body {
 header {
   position: relative;
   top: auto;
-  background-color: #fff;
+  background-color: #ffffffde;
   z-index: 1;
   display: flex;
   justify-content: space-between;

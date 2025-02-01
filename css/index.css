@@ -72,7 +72,7 @@ nav a:hover {
 
 #img-index {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/hotel_room.png), no-repeat;
+    url(../images/DALL·E\ 2025-02-01\ 21.33.03\ -\ A\ seamless\,\ high-resolution\ ocean-themed\ fantasy\ background\ inspired\ by\ Capri.\ The\ design\ features\ stylized\ waves\,\ intricate\ Mediterranean\ tile\ patter.webp), no-repeat;
   background-size: cover;
   height: 70vh;
 }
@@ -879,5 +879,70 @@ textarea {
 
   #aboutus_hotelstaff_person img {
     width: 70%;
+  }
+}
+/* Modifica per supportare video */
+
+.room-card img, 
+.room-card video {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.gallery-img, 
+.gallery video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.main-img img, 
+.main-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modifica per le sezioni specifiche che usano immagini di sfondo */
+#img-index, 
+#img-room, 
+#img-events, 
+#img-contact, 
+#img-about {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#img-index video, 
+#img-room video, 
+#img-events video, 
+#img-contact video, 
+#img-about video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Adattamenti per la responsività */
+@media screen and (max-width: 1024px) {
+  .room-card img, .room-card video {
+    height: 25vh;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .room-card img, .room-card video {
+    height: 30vh;
   }
 }

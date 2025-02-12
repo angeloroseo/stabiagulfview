@@ -10,13 +10,13 @@ body {
 header {
   position: relative;
   top: auto;
-  background-color: #ffffffde;
+  background-color: #f5ededde;
   z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  box-shadow: 0px 0px 10px #bbb;
+  box-shadow: 0px 0px 10px #f1ecec;
 }
 
 #hotel_logo {
@@ -104,19 +104,19 @@ nav a:hover {
 }
 
 .intro-content {
-  color: #fff;
+  color: #d2caca;
   font-size: 30px;
   text-align: center;
 }
 
 h2 {
   text-align: center;
-  color: #09529a;
+  color: #979a9d;
 }
 
 .u-line {
   width: 20%;
-  color: #eee;
+  color: #e8e5e5;
 }
 
 #sec-rooms {
@@ -945,4 +945,20 @@ textarea {
   .room-card img, .room-card video {
     height: 30vh;
   }
+}
+.btn-prenota {
+  display: inline-block;
+  background-color: #25D366; /* Verde WhatsApp */
+  color: white !important; /* Colore bianco per il testo */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Evita che cambi colore dopo il click */
+.btn-prenota:visited {
+  color: white !important;
+  background-color: #25D366 !important;
 }

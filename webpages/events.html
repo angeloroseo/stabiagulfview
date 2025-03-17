@@ -18,7 +18,6 @@
          <!-- <li><a href="rooms.html">Rooms</a></li> -->
           <li><a class="active" href="events.html">prenotazione colazione/tours</a></li>
           <li><a href="about-us.html">chi siamo</a></li>
-          
         </ul>
       </nav>
     </header>
@@ -70,37 +69,34 @@
               <img src="../images/table3.jpg" alt="dinner tables" />
             </td>
           </tr>
-        </tr>
-        <tr>
-          <td>SU PRENOTAZIONE </td>
-          <td>TOUR GUIDATI POMPEI/VESUVIO/ERCOLANO</td>
-          <td>DA 30 EURO /PERSONA</td>
-          <td><a href="#">Book Now</a></td>
-          <td>
-            <img src="../images/table3.jpg" alt="dinner tables" />
-          </td>
-        </tr>
-      </tr>
-      <tr>
-        <td>SU PRENOTAZIONE</td>
-        <td>NOLEGGIO BARCA CAPRI/POSITANO/AMALFI/ISCHIA</td>
-        <td>$100/Person</td>
-        <td><a href="#">Book Now</a></td>
-        <td>
-          <img src="../images/table3.jpg" alt="dinner tables" />
-        </td>
-      </tr>
-    </tr>
-    <tr>
-      <td>SU PRENOTAZIONE </td>
-      <td>TAXI</td>
-      <td>$50-150/Person</td>
-      <td><a href="#">Book Now</a></td>
-      <td>
-        <img src="../images/table3.jpg" alt="dinner tables" />
-      </td>
-    </tr>
- 
+        </tbody>
+        <tbody>
+          <tr>
+            <td>SU PRENOTAZIONE </td>
+            <td>TOUR GUIDATI POMPEI/VESUVIO/ERCOLANO</td>
+            <td>DA 30 EURO /PERSONA</td>
+            <td><a href="#">Book Now</a></td>
+            <td>
+              <img src="../images/table3.jpg" alt="dinner tables" />
+            </td>
+          </tr>
+          <tr>
+            <td>SU PRENOTAZIONE</td>
+            <td>NOLEGGIO BARCA CAPRI/POSITANO/AMALFI/ISCHIA</td>
+            <td>$100/Person</td>
+            <td><a href="#">Book Now</a></td>
+            <td>
+              <img src="../images/table3.jpg" alt="dinner tables" />
+            </td>
+          </tr>
+          <tr>
+            <td>SU PRENOTAZIONE </td>
+            <td>TAXI</td>
+            <td>$50-150/Person</td>
+            <td><a href="#">Book Now</a></td>
+            <td>
+              <img src="../images/table3.jpg" alt="dinner tables" />
+            </td>
           </tr>
         </tbody>
       </table>
@@ -123,14 +119,11 @@
           </p>
         </div>
         <div class="event">
-          <img
-            src="../images/barristerslounge-2_standard.jpg"
-            alt="dining area"
-          />
+          <img src="../images/barristerslounge-2_standard.jpg" alt="dining area" />
           <h4>COSA OFFRIAMO</h4>
           <p class="event_details">
-          sala per eventi  a partire da 400 euro 
-          terrazza superiore a partire da 600 euro 
+            sala per eventi  a partire da 400 euro 
+            terrazza superiore a partire da 600 euro 
           </p>
         </div>
       </div>
@@ -150,17 +143,12 @@
          <!-- <li><a href="webpages/rooms.html">Camere</a></li> -->
             <li><a href="events.html">Prenotazioni eventi/tours</a></li>
             <li><a href="about-us.html">chi siamo</a></li>
-            
-  
+          </ul>
+        </nav>
       </div>
       <div class="f-content">
-        <img
-          id="footer-img"
-          src="../images/ciao sono angelo.JPG"
-          alt="foundation logo"
-        />
+        <img id="footer-img" src="../images/ciao sono angelo.JPG" alt="foundation logo" />
       </div>
-
       <p id="copyright">agl group 2025</p>
     </footer>
 
@@ -212,7 +200,8 @@
       // Gestione del click sul link "Book Now" relativo al servizio TAXI
       document.querySelectorAll("table a").forEach(function(link) {
         var row = link.closest("tr");
-        if (row && row.cells[1].textContent.trim().toUpperCase() === "TAXI") {
+        // Uso di .includes() per una verifica più robusta (caso mobile)
+        if (row && row.cells[1].textContent.toUpperCase().includes("TAXI")) {
           link.addEventListener("click", function(e) {
             e.preventDefault();
             document.getElementById("taxiModal").style.display = "block";
@@ -231,11 +220,17 @@
         var departure = document.getElementById("departure").value;
         var arrival = document.getElementById("arrival").value;
         var arrivalTime = document.getElementById("arrivalTime").value;
-        var message = "Ciao, voglio prenotare un taxi per questa partenza: " + departure + "" +
-                      " e arrivo: " + arrival + "" +
-                      " in questo orario: " + arrivalTime;
+        var message = "Ciao, voglio prenotare un taxi per questa partenza: " + departure + "%0A" +
+                      "e arrivo: " + arrival + "%0A" +
+                      "in questo orario: " + arrivalTime;
         var phoneNumber = "393500313314";
-        var whatsappURL = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var whatsappURL;
+        if (isMobile) {
+          whatsappURL = "whatsapp://send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+        } else {
+          whatsappURL = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+        }
         window.open(whatsappURL, "_blank");
         document.getElementById("taxiModal").style.display = "none";
       });

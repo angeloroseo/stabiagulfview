@@ -1,4 +1,4 @@
-<!-- Created by Pratik Bhingaradiya -->
+<!-- Created by Pratik Bhingaradiya --> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,8 +93,8 @@
     </tr>
     <tr>
       <td>SU PRENOTAZIONE </td>
-      <td>SERVIZIO SAN VALENTINO IN CAMERA</td>
-      <td>$100/Person</td>
+      <td>TAXI</td>
+      <td>$50-150/Person</td>
       <td><a href="#">Book Now</a></td>
       <td>
         <img src="../images/table3.jpg" alt="dinner tables" />
@@ -163,5 +163,82 @@
 
       <p id="copyright">agl group 2025</p>
     </footer>
+
+    <!-- Modal per la prenotazione taxi -->
+    <div id="taxiModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Prenotazione Taxi</h2>
+        <form id="taxiForm">
+          <label for="departure">Partenza:</label>
+          <input
+            type="text"
+            id="departure"
+            name="departure"
+            list="departureSuggestions"
+            placeholder="Inserisci luogo di partenza"
+            required
+          />
+          <datalist id="departureSuggestions">
+            <option value="Napoli">
+            <option value="Salerno">
+            <option value="Sorrento">
+          </datalist>
+
+          <label for="arrival">Arrivo:</label>
+          <input
+            type="text"
+            id="arrival"
+            name="arrival"
+            list="arrivalSuggestions"
+            placeholder="Inserisci luogo di arrivo"
+            required
+          />
+          <datalist id="arrivalSuggestions">
+            <option value="Capri">
+            <option value="Positano">
+            <option value="Amalfi">
+          </datalist>
+
+          <label for="arrivalTime">Orario di arrivo:</label>
+          <input type="time" id="arrivalTime" name="arrivalTime" required />
+
+          <button type="submit">Invia</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Gestione del click sul link "Book Now" relativo al servizio TAXI
+      document.querySelectorAll("table a").forEach(function(link) {
+        var row = link.closest("tr");
+        if (row && row.cells[1].textContent.trim().toUpperCase() === "TAXI") {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("taxiModal").style.display = "block";
+          });
+        }
+      });
+
+      // Chiusura del modal al click sul pulsante "X"
+      document.querySelector("#taxiModal .close").addEventListener("click", function () {
+        document.getElementById("taxiModal").style.display = "none";
+      });
+
+      // Gestione del submit del form nel modal
+      document.getElementById("taxiForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        var departure = document.getElementById("departure").value;
+        var arrival = document.getElementById("arrival").value;
+        var arrivalTime = document.getElementById("arrivalTime").value;
+        var message = "Ciao, voglio prenotare un taxi per questa partenza: " + departure + "" +
+                      " e arrivo: " + arrival + "" +
+                      " in questo orario: " + arrivalTime;
+        var phoneNumber = "393500313314";
+        var whatsappURL = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+        window.open(whatsappURL, "_blank");
+        document.getElementById("taxiModal").style.display = "none";
+      });
+    </script>
   </body>
 </html>

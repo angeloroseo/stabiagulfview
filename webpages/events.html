@@ -220,9 +220,9 @@
         var departure = document.getElementById("departure").value;
         var arrival = document.getElementById("arrival").value;
         var arrivalTime = document.getElementById("arrivalTime").value;
-        var message = "Ciao, voglio prenotare un taxi per questa partenza: " + departure + "%0A" +
-                      "e arrivo: " + arrival + "%0A" +
-                      "in questo orario: " + arrivalTime;
+        var message = "Ciao, voglio prenotare un taxi per questa partenza: " + departure + "" +
+                      " e arrivo: " + arrival + "" +
+                      " in questo orario: " + arrivalTime;
         var phoneNumber = "393500313314";
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         var whatsappURL;

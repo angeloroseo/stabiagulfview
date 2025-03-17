@@ -1019,3 +1019,33 @@ form button {
   margin-top: 15px;
   cursor: pointer;
 }
+/* Migliorie per la fruibilità in verticale su dispositivi mobili */
+@media screen and (max-width: 760px) {
+  /* Riduci il padding delle sezioni per un layout più compatto */
+  section {
+    padding: 20px;
+  }
+
+  /* Riduci la dimensione del testo nell'intro per adattarsi meglio agli schermi piccoli */
+  .intro-content {
+    font-size: 24px;
+  }
+
+  /* Riduci la dimensione dei titoli e riduci il margine superiore per risparmiare spazio verticale */
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  /* Rendi le tabelle scrollabili orizzontalmente se necessario */
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Adatta il modal per dispositivi mobili: maggiore larghezza e margine verticale per una migliore visualizzazione */
+  .modal-content {
+    width: 90%;
+    margin: 15% auto;
+  }
+}

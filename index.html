@@ -6,7 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/index.css" />
-    <title>STABIA GULFVIEW </title>
+    <title>STABIA GULFVIEW</title>
+    <!-- Styles per riposizionare il booking widget in mobile -->
+    <style>
+      @media (max-width: 768px) {
+        /* Nascondi il widget originale nella sezione principale */
+        .booking-widget-original {
+          display: none !important;
+        }
+        /* Mostra e formatta il widget nel header per mobile */
+        #booking-mobile {
+          display: block !important;
+          width: 100%;
+          text-align: center;
+          margin: 10px 0;
+        }
+      }
+      @media (min-width: 769px) {
+        /* Nascondi il widget aggiuntivo in desktop */
+        #booking-mobile {
+          display: none !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -16,52 +38,42 @@
       <nav>
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
-        <!-- <li><a href="rooms.html">Rooms</a></li> --> 
+          <!-- <li><a href="rooms.html">Rooms</a></li> -->
           <li><a href="webpages/events.html">Prenotazioni colazione/tour</a></li>
           <li><a href="webpages/about-us.html">Chi Siamo</a></li>
-          
         </ul>
       </nav>
+      <!-- Booking Bed-and-breakfast.it (solo mobile) -->
+      <div id="booking-mobile">
+        <!-- Inizio - Booking Bed-and-breakfast.it -->
+        <script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script>
+        <!-- Fine - Booking Bed-and-breakfast.it -->
+      </div>
     </header>
     <main>
       <section class="main-img" id="img-index">
-          <div class="intro-content">
-              <h1>STABIA GULFVIEW</h1>
-              <a href="https://wa.me/+393500313314" class="btn-prenota" target="_blank">contattaci su Whatsapp</a>
-          </div>
-          <!-- Inizio - Booking Bed-and-breakfast.it --><script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script><!-- Fine - Booking Bed-and-breakfast.it -->
-      </section>
-  </main>
-  
+        <div class="intro-content">
+          <h1>STABIA GULFVIEW</h1>
+          <a href="https://wa.me/+393500313314" class="btn-prenota" target="_blank">contattaci su Whatsapp</a>
+        </div>
+       
       </section>
       <section id="sec-rooms">
         <h2>LE NOSTRE CAMERE</h2>
         <hr class="u-line" />
         <div class="rooms">
           <div class="room-card">
-            <img
-              src="images/AMORE 2.JPG"
-              class="room-img"
-              alt="camera standard"
-            />
+            <img src="images/AMORE 2.JPG" class="room-img" alt="camera standard" />
             <h3>AMORE</h3>
             <p>$50,00 / per notte</p>
           </div>
           <div class="room-card">
-            <img
-              src="images/SOLARITA'2.JPG"
-              class="room-img"
-              alt="camera familiare"
-            />
+            <img src="images/SOLARITA'2.JPG" class="room-img" alt="camera familiare" />
             <h3>SOLARITA'</h3>
             <p>$45 / per notte</p>
           </div>
           <div class="room-card">
-            <img
-              src="images/FIDUCIA 2.JPG"
-              class="room-img"
-              alt="camera singola"
-            />
+            <img src="images/FIDUCIA 2.JPG" class="room-img" alt="camera singola" />
             <h3>FIDUCIA</h3>
             <p>$50 / per notte</p>
           </div>
@@ -71,20 +83,12 @@
             <p>$40 / per notte</p>
           </div>
           <div class="room-card">
-            <img
-              src="images/ap.grande.JPG"
-              class="room-img"
-              alt="camera con balcone"
-            />
+            <img src="images/ap.grande.JPG" class="room-img" alt="camera con balcone" />
             <h3>APPARTAMENTO GRANDE</h3>
             <p>$100/ per notte</p>
           </div>
           <div class="room-card">
-            <img
-              src="images/ap piccolo.JPG"
-              class="room-img"
-              alt="doppio balcone"
-            />
+            <img src="images/ap piccolo.JPG" class="room-img" alt="doppio balcone" />
             <h3>APPARTAMENTO PICCOLO</h3>
             <p>$90 / per notte</p>
           </div>
@@ -169,26 +173,10 @@
         <div class="gallery">
           <img class="gallery-img" src="images/ap piccolo.JPG" alt="hotel" />
           <img class="gallery-img" src="images/ap.grande.JPG" alt="piscina" />
-          <img
-            class="gallery-img"
-            src="images/IMG_1036.JPG"
-            alt="piscina hotel"
-          />
-          <img
-            class="gallery-img"
-            src="images/IMG_1048.JPG"
-            alt="camera con balcone"
-          />
-          <img
-            class="gallery-img"
-            src="images/IMG_1057.JPG"
-            alt="colazione a letto"
-          />
-          <img
-            class="gallery-img"
-            src="images/IMG_1658.JPG"
-            alt="camera singola"
-          />
+          <img class="gallery-img" src="images/IMG_1036.JPG" alt="piscina hotel" />
+          <img class="gallery-img" src="images/IMG_1048.JPG" alt="camera con balcone" />
+          <img class="gallery-img" src="images/IMG_1057.JPG" alt="colazione a letto" />
+          <img class="gallery-img" src="images/IMG_1658.JPG" alt="camera singola" />
           <img class="gallery-img" src="images/IMG_1278.JPG" alt="camera" />
           <img class="gallery-img" src="images/IMG_1067.JPG" alt="atrio hotel" />
         </div>
@@ -236,16 +224,13 @@
             <!-- <li><a href="webpages/rooms.html">Camere</a></li> -->
             <li><a href="webpages/events.html">Eventi</a></li>
             <li><a href="webpages/about-us.html">Chi Siamo</a></li>
-            
           </ul>
         </nav>
-      </div>
-     
       </div>
       <div class="f-content">
         <img id="footer-img" src="images/ciao sono angelo.JPG" alt="logo foundation" />
       </div>
-      <p id="copyright">&copy The Foundation 2023. Tutti i diritti riservati AGL group.</p>
+      <p id="copyright">&copy; The Foundation 2023. Tutti i diritti riservati AGL group.</p>
     </footer>
   </body>
 </html>

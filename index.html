@@ -7,26 +7,23 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/index.css" />
     <title>STABIA GULFVIEW</title>
-    <!-- Styles per riposizionare il booking widget in mobile -->
+    <!-- Stili per mobile e desktop per il booking widget -->
     <style>
+      /* Mobile: mostra solo widget in header, nascondi nel main */
       @media (max-width: 768px) {
-        /* Nascondi il widget originale nella sezione principale */
-        .booking-widget-original {
-          display: none !important;
-        }
-        /* Mostra e formatta il widget nel header per mobile */
-        #booking-mobile {
-          display: block !important;
-          width: 100%;
-          text-align: center;
-          margin: 10px 0;
-        }
+        #booking-mobile { display: block !important; }
+        #booking-desktop { display: none !important; }
       }
+      /* Desktop: mostra solo widget nel main, nascondi header */
       @media (min-width: 769px) {
-        /* Nascondi il widget aggiuntivo in desktop */
-        #booking-mobile {
-          display: none !important;
-        }
+        #booking-mobile { display: none !important; }
+        #booking-desktop { display: block !important; }
+      }
+      /* Impostazioni generali per i container widget */
+      #booking-mobile, #booking-desktop {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
       }
     </style>
   </head>
@@ -38,16 +35,13 @@
       <nav>
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
-          <!-- <li><a href="rooms.html">Rooms</a></li> -->
           <li><a href="webpages/events.html">Prenotazioni colazione/tour</a></li>
           <li><a href="webpages/about-us.html">Chi Siamo</a></li>
         </ul>
       </nav>
-      <!-- Booking Bed-and-breakfast.it (solo mobile) -->
-      <div id="booking-mobile">
-        <!-- Inizio - Booking Bed-and-breakfast.it -->
+      <!-- Booking widget per mobile -->
+      <div id="booking-mobile" style="display:none;">
         <script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script>
-        <!-- Fine - Booking Bed-and-breakfast.it -->
       </div>
     </header>
     <main>
@@ -56,7 +50,10 @@
           <h1>STABIA GULFVIEW</h1>
           <a href="https://wa.me/+393500313314" class="btn-prenota" target="_blank">contattaci su Whatsapp</a>
         </div>
-       
+        <!-- Booking widget per desktop -->
+        <div id="booking-desktop" style="display:none;">
+          <script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script>
+        </div>
       </section>
       <section id="sec-rooms">
         <h2>LE NOSTRE CAMERE</h2>
@@ -65,32 +62,32 @@
           <div class="room-card">
             <img src="images/AMORE 2.JPG" class="room-img" alt="camera standard" />
             <h3>AMORE</h3>
-            <p>$50,00 / per notte</p>
+            <p>€50,00 / per notte</p>
           </div>
           <div class="room-card">
             <img src="images/SOLARITA'2.JPG" class="room-img" alt="camera familiare" />
             <h3>SOLARITA'</h3>
-            <p>$45 / per notte</p>
+            <p>€45 / per notte</p>
           </div>
           <div class="room-card">
             <img src="images/FIDUCIA 2.JPG" class="room-img" alt="camera singola" />
             <h3>FIDUCIA</h3>
-            <p>$50 / per notte</p>
+            <p>€50 / per notte</p>
           </div>
           <div class="room-card">
             <img src="images/CONDIVISIONE 2.JPG" class="room-img" alt="letto deluxe" />
             <h3>CONDIVISIONE</h3>
-            <p>$40 / per notte</p>
+            <p>€40 / per notte</p>
           </div>
           <div class="room-card">
             <img src="images/ap.grande.JPG" class="room-img" alt="camera con balcone" />
             <h3>APPARTAMENTO GRANDE</h3>
-            <p>$100/ per notte</p>
+            <p>€100 / per notte</p>
           </div>
           <div class="room-card">
             <img src="images/ap piccolo.JPG" class="room-img" alt="doppio balcone" />
             <h3>APPARTAMENTO PICCOLO</h3>
-            <p>$90 / per notte</p>
+            <p>€90 / per notte</p>
           </div>
         </div>
       </section>
@@ -122,7 +119,7 @@
             <h3>OFFERTE VACANZA IN FAMIGLIA</h3>
             <p>
               Ottieni il 30% di sconto portando la tua famiglia a soggiornare
-              con noi. Gli incentivi includono piscina gratuita , bus per
+              con noi. Gli incentivi includono piscina gratuita, bus per
               la città e servizio in camera.
             </p>
             <p><a href="#">SCOPRI DI PIÙ</a></p>
@@ -189,20 +186,14 @@
             <img id="test_img" src="images/testimony1.png" alt="uomo" />
             <div>
               <h4>Derryck Dowuona</h4>
-              <blockquote>
-                "Amo la vista dalla camera doppio balcone. Il servizio clienti è
-                fantastico!!"
-              </blockquote>
+              <blockquote>"Amo la vista dalla camera doppio balcone. Il servizio clienti è fantastico!!"</blockquote>
             </div>
           </div>
           <div class="test">
             <img id="test_img" src="images/testimony2.png" alt="testimone" />
             <div>
               <h4>James Bon</h4>
-              <blockquote>
-                "La camera singola è perfetta per missioni segrete di notte. Il
-                servizio è eccezionale."
-              </blockquote>
+              <blockquote>"La camera singola è perfetta per missioni segrette di notte. Il servizio è eccezionale."</blockquote>
             </div>
           </div>
         </div>
@@ -211,17 +202,13 @@
     <footer>
       <div class="f-content">
         <h3>Chi Siamo</h3>
-        <p>
-          Siamo un'azienda che si distingue come meta ideale per turisti e
-          cittadini.
-        </p>
+        <p>Siamo un'azienda che si distingue come meta ideale per turisti e cittadini.</p>
       </div>
       <div class="f-content">
         <h3>Menu Rapido</h3>
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="webpages/rooms.html">Camere</a></li> -->
             <li><a href="webpages/events.html">Eventi</a></li>
             <li><a href="webpages/about-us.html">Chi Siamo</a></li>
           </ul>

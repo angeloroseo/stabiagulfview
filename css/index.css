@@ -1049,3 +1049,31 @@ form button {
     margin: 15% auto;
   }
 }
+/* ————————————————————————————— */
+/* Booking-widget: mostra in mobile solo #booking-mobile, in desktop solo #booking-desktop */
+/* ————————————————————————————— */
+#booking-mobile,
+#booking-desktop {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* di default nascondi entrambi */
+#booking-mobile,
+#booking-desktop {
+  display: none;
+}
+
+/* su schermi ≤ 768px mostra il mobile */
+@media screen and (max-width: 768px) {
+  #booking-mobile {
+    display: block !important;
+  }
+}
+
+/* su schermi ≥ 769px mostra il desktop */
+@media screen and (min-width: 769px) {
+  #booking-desktop {
+    display: block !important;
+  }
+}

@@ -1,4 +1,3 @@
-<!-- Creato da Derryck, Pratik, Jacobo e Aisha -->
 <!DOCTYPE html>
 <html lang="it">
   <head>
@@ -7,25 +6,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/index.css" />
     <title>STABIA GULFVIEW</title>
-    <!-- Stili per mobile e desktop per il booking widget -->
-    <style>
-      /* Mobile: mostra solo widget in header, nascondi nel main */
-      @media (max-width: 768px) {
-        #booking-mobile { display: block !important; }
-        #booking-desktop { display: none !important; }
-      }
-      /* Desktop: mostra solo widget nel main, nascondi header */
-      @media (min-width: 769px) {
-        #booking-mobile { display: none !important; }
-        #booking-desktop { display: block !important; }
-      }
-      /* Impostazioni generali per i container widget */
-      #booking-mobile, #booking-desktop {
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -39,22 +19,38 @@
           <li><a href="webpages/about-us.html">Chi Siamo</a></li>
         </ul>
       </nav>
-      <!-- Booking widget per mobile -->
-      <div id="booking-mobile" style="display:none;">
-        <script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script>
+
+      <!-- Booking widget per MOBILE -->
+      <div id="booking-mobile">
+        <script
+          type="text/javascript"
+          src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive">
+        </script>
       </div>
+      <!-- /Booking widget per MOBILE -->
+
     </header>
+
     <main>
       <section class="main-img" id="img-index">
         <div class="intro-content">
           <h1>STABIA GULFVIEW</h1>
-          <a href="https://wa.me/+393500313314" class="btn-prenota" target="_blank">contattaci su Whatsapp</a>
+          <a href="https://wa.me/+393500313314" class="btn-prenota" target="_blank">
+            contattaci su Whatsapp
+          </a>
         </div>
-        <!-- Booking widget per desktop -->
-        <div id="booking-desktop" style="display:none;">
-          <script type="text/javascript" src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive"></script>
+
+        <!-- Booking widget per DESKTOP -->
+        <div id="booking-desktop">
+          <script
+            type="text/javascript"
+            src="https://www.bed-and-breakfast.it/scripts/widget-richieste/widget.cfm?idbooking=39352&l=it&colore=ir_grigio_chiaro&orientamento=ir_responsive">
+          </script>
         </div>
+        <!-- /Booking widget per DESKTOP -->
+
       </section>
+
       <section id="sec-rooms">
         <h2>LE NOSTRE CAMERE</h2>
         <hr class="u-line" />
@@ -91,6 +87,7 @@
           </div>
         </div>
       </section>
+
       <section>
         <h2>OFFERTE SPECIALI</h2>
         <hr class="u-line" />
@@ -126,6 +123,7 @@
           </div>
         </div>
       </section>
+
       <section>
         <h2>SERVIZI</h2>
         <hr class="u-line" />
@@ -164,6 +162,7 @@
           </div>
         </div>
       </section>
+
       <section>
         <h2>GALLERIA</h2>
         <hr class="u-line" />
@@ -178,6 +177,7 @@
           <img class="gallery-img" src="images/IMG_1067.JPG" alt="atrio hotel" />
         </div>
       </section>
+
       <section>
         <h2>TESTIMONIANZE</h2>
         <hr class="u-line" />
@@ -193,12 +193,13 @@
             <img id="test_img" src="images/testimony2.png" alt="testimone" />
             <div>
               <h4>James Bon</h4>
-              <blockquote>"La camera singola è perfetta per missioni segrette di notte. Il servizio è eccezionale."</blockquote>
+              <blockquote>"La camera singola è perfetta per missioni segrete di notte. Il servizio è eccezionale."</blockquote>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="f-content">
         <h3>Chi Siamo</h3>

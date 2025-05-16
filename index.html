@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/index.css" />
+
+    <!-- flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
     <title>STABIA GULFVIEW</title>
   </head>
   <body>
@@ -28,7 +35,6 @@
         </script>
       </div>
       <!-- /Booking widget per MOBILE -->
-
     </header>
 
     <main>
@@ -48,7 +54,6 @@
           </script>
         </div>
         <!-- /Booking widget per DESKTOP -->
-
       </section>
 
       <section id="sec-rooms">
@@ -220,5 +225,33 @@
       </div>
       <p id="copyright">&copy; The Foundation 2023. Tutti i diritti riservati AGL group.</p>
     </footer>
+
+    <!-- flatpickr JS e localizzazione -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/it.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Applichiamo flatpickr SOLO su schermi desktop (≥769px)
+        if (window.matchMedia("(min-width: 769px)").matches) {
+          const intervalId = setInterval(() => {
+            const checkin  = document.querySelector("#booking-desktop input[name='checkin']");
+            const checkout = document.querySelector("#booking-desktop input[name='checkout']");
+            if (checkin && checkout) {
+              flatpickr(checkin, {
+                locale: "it",
+                dateFormat: "d-m-Y",
+                allowInput: true
+              });
+              flatpickr(checkout, {
+                locale: "it",
+                dateFormat: "d-m-Y",
+                allowInput: true
+              });
+              clearInterval(intervalId);
+            }
+          }, 300);
+        }
+      });
+    </script>
   </body>
 </html>

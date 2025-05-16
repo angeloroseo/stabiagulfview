@@ -1077,3 +1077,27 @@ form button {
     display: block !important;
   }
 }
+@media screen and (min-width: 1024px) {
+  /* contenitore principale in position relative */
+  .main-img {
+    position: relative;
+  }
+
+  /* sposta il titolo più a sinistra */
+  .intro-content {
+    position: absolute;
+    left: 50px;            /* regola questo valore a piacere */
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  /* mantiene il widget desktop più a destra */
+  #booking-desktop {
+    position: absolute;
+    top: 50%;
+    right: 50px;           /* già regolato in precedenza */
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+}
